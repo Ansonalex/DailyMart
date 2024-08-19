@@ -1,0 +1,26 @@
+{% extends 'ind.html' %}
+{% block content %}
+<form action="{% url 'category' %}" method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+<div class="card-body">
+    <form>
+      <div class="mb-3">
+        <label class="form-label" for="basic-default-fullname">categoryname</label>
+        <input type="text" class="form-control" id="basic-default-fullname" name="categoryname" placeholder="">
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="basic-default-company">categoryimage</label>
+        <input type="file" class="form-control" id="basic-default-company" name="categoryimage"  placeholder="">
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="basic-default-company">categorydiscription</label>
+        <div class="input-group input-group-merge">
+            <input type="text" class="form-control" id="basic-default-fullname" name="categorydiscription"  placeholder="">
+        </div>
+      </div>
+      <div class="mb-3">
+      </div>
+      <button type="submit" class="btn btn-primary">submit</button>
+    </form>
+  </div>
+  {% endblock %}

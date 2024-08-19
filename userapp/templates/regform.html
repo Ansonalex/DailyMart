@@ -1,0 +1,34 @@
+{% extends 'index.html' %}
+{% block content %}
+<center><form action="{% url 'regform' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+<div class="col-lg-6">
+    <div class="login_form_inner register_form_inner">
+        <h3>Create an account</h3>
+        <form class="row login_form" action="#/" id="register_form">
+            <div class="col-md-12 form-group">
+                <input type="text" class="form-control" id="name" name="Username" placeholder="Username" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Username'">
+            </div>
+            <div class="col-md-12 form-group">
+                <input type="text" class="form-control" id="email" name="EmailAddress" placeholder="EmailAddress" onfocus="this.placeholder = ''" onblur="this.placeholder = 'EmailAddress'">
+</div>
+<div class="col-md-12 form-group">
+                <input type="text" class="form-control" id="password" name="Password" placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'">
+</div>
+<div class="col-md-12 form-group">
+                <input type="text" class="form-control" id="confirmPassword" name="ConfirmPassword" placeholder="Confirm Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'ConfirmPassword'">
+            </div>
+            <div class="col-md-12 form-group">
+                <div class="creat_account">
+                    <input type="checkbox" id="f-option2" name="selector">
+                    <label for="f-option2">Keep me logged in</label>
+                </div>
+            </div>
+            <div class="col-md-12 form-group">
+                <button type="submit" value="submit" class="button button-register w-100" style="background-color: rgb(185, 197, 192);">Register</button>
+            </div>
+        </form>
+    </center>
+    </div>
+</div>
+{% endblock %}

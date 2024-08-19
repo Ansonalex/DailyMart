@@ -1,0 +1,40 @@
+{% extends 'ind.html' %}
+{% block content %}
+
+
+
+<div class="card-body">
+    {% for i in data %}
+    <form action="{% url 'update1' id=i.id %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="mb-3">
+        <label class="form-label" for="basic-default-fullname">productname</label>
+        <input type="text" class="form-control" id="basic-default-fullname" name="productname" value="{{i.productname}}">
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="basic-default-fullname">productcategory</label>
+        <select name="category" id="">
+          {% for i in data1 %}
+          <option value="{{i.category}}">{{i.category}}</option>
+          {% endfor %}
+          
+        </select>
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="basic-default-company">productimage</label>
+        <input type="file" class="form-control" id="basic-default-company" name="productimage"  value="{{i.productimage}}">
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="basic-default-company">productprice</label>
+        <div class="input-group input-group-merge">
+            <input type="text" class="form-control" id="basic-default-fullname" name="productprice"  value="{{i.productprice}}">
+        </div>
+      </div>
+      <div class="mb-3">
+      </div>
+      <button type="submit" class="btn btn-primary">submit</button>
+    </form>
+ 
+    {% endfor %}
+  </div>
+  {% endblock %}

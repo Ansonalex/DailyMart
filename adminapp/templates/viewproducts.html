@@ -1,0 +1,36 @@
+{% extends 'ind.html' %}
+{% block content %}
+<div class="card">
+    <h5 class="card-header">Table Dark</h5>
+    <div class="table-responsive text-nowrap">
+      <table class="table table-dark">
+        <thead>
+          <tr>
+            <th>categoryname</th>
+            <th>category</th>
+            <th>categoryimage</th>
+            <th>categorydiscription</th>
+            <th>edit</th>
+            <th>delete</th>
+            
+          </tr>
+        </thead>
+        <tbody class="table-border-bottom-0">
+          {% for i in data %}
+          <tr>
+            <td><i class="fab fa-angular fa-lg text-danger me-3"></i>{{ i.productname }}</td>
+            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{ i.category }}</strong></td>
+
+            <td><img src="{{i.productimage.url}}" style="height: 100px;"></td>
+            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{ i.productprice }}</strong></td>
+
+            <td><a href="{% url 'editproducts' id=i.id %}"><button>edit</button></a></td>
+                        <td><a href="{% url 'delete' id=i.id %}"><button>delete</button></a></td>
+
+          </tr>
+         {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  {% endblock %}

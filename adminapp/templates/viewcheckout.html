@@ -1,0 +1,34 @@
+{% extends 'ind.html' %}
+{% block content %}
+<div class="card">
+    <h5 class="card-header">Table Dark</h5>
+    <div class="table-responsive text-nowrap">
+      <table class="table table-dark">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>EmailAddress</th>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>total</th>
+            
+          </tr>
+        </thead>
+        <tbody class="table-border-bottom-0">
+          {% for i in data %}
+          <tr>
+            <td><i class="fab fa-angular fa-lg text-danger me-3"></i>{{ i.userid.Username }}</td>
+            <td><i class="fab fa-angular fa-lg text-danger me-3"></i>{{ i.userid.EmailAddress }}</td>           
+            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{ i.cartid.productid.productname }}</strong></td>
+            <td><i class="fab fa-angular fa-lg text-danger me-3"></i>{{ i.cartid.quantity }}</td>
+            <td><i class="fab fa-angular fa-lg text-danger me-3"></i>{{ i.cartid.total }}</td>           
+           
+
+
+          </tr>
+         {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  {% endblock %}
